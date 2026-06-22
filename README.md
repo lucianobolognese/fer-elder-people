@@ -1,4 +1,4 @@
-# SAGE-Face: Senior Affective Graph of Emotions
+# FER Elder People: Emotion Recognition
 
 > Tesi di Laurea in Informatica — Sistemi ad Agenti  
 > Università degli Studi di Bari Aldo Moro, A.A. 2025–2026  
