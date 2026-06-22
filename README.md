@@ -21,34 +21,27 @@ Il contributo principale è **SAGE-Face**, un dataset costruito ex novo composto
 
 ```
 ├── dataset/
-│   ├── pipeline/           # Script di costruzione SAGE-Face
-│   │   ├── age_screening.py        # Stima età con DeepFace
-│   │   ├── vlm_validation.py       # Validazione con Qwen3-VL
-│   │   └── merge_sources.py        # Aggregazione sorgenti statiche/dinamiche
-│   └── sage_face_master.csv        # Master CSV con Unique_ID, path, Ground Truth
+│   │   ├── metadata_master_pulito_affectnet.csv
+│   │   ├── metadata_master_pulito_fer2013
+│   │   ├── metadata_master_pulito_rafdb
+│   |   ├── metadata_master_pulito_raisefer
+|   |   └── metadata_master_pulito_sageface
 │
 ├── benchmark/
-│   ├── pipeline_inference.py   # Pipeline di inferenza unificata per tutti i modelli
-│   ├── label_normalization.py  # Mappatura etichette → 7 emozioni di Ekman
-│   └── results/
-│       ├── accuracy_table.csv
-│       ├── precision_table.csv
-│       └── f1_table.csv
+│   │   ├── emotiefflib
+│   │   ├── affectnet
+│   │   ├── ddamfn
+│   |   ├── efficientface
+|   |   └── rmn
 │
 ├── gradcam/
-│   ├── gradcam_analysis.py     # Estrazione heatmap con hook PyTorch
-│   └── visualize.py            # Overlay JET colormap su immagini originali
+│   ├── gradcam_emotiefflib.py     
+│   └── gradcam_emotiefflib_finetuned.py           
 │
 ├── finetuning/
-│   ├── dataset_builder.py      # Aggregazione dataset per fine-tuning
-│   ├── augmentation.py         # Pipeline Albumentations + Specific Erasing
-│   ├── train.py                # Loop di addestramento AdamW + CosineAnnealingLR
-│   ├── cross_validation.py     # 5-Fold Cross Validation
-│   └── eval.py                 # Valutazione su tutti i dataset post fine-tuning
-│
-└── notebooks/
-    ├── benchmark_analysis.ipynb    # Analisi e visualizzazione risultati benchmark
-    └── finetuning_results.ipynb    # Curve di training, confusion matrix, Grad-CAM
+│   ├── finetune_emotiefflib.py    
+│   ├── finetuning_sageface_foldcv.py               
+│   └── benchmark_sageface_finetuned.py                 # Valutazione su tutti i dataset post fine-tuning
 ```
 
 ---
